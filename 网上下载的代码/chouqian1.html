@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">
+<html>
+<head>
+    <title>抽签系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script language="javascript">
+        var timer;
+        var randnum;
+        var cellnum =1;
+        var mobile = new Array();
+        var times;
+        var num;
+        var str= new Array();
+
+        //在这里添加数据
+        function spli(){
+            var _inner="";
+            var j;
+            datastr=document.all.up.value;
+            str=datastr.split(",");
+            for(i=0;i<str.length;i++ )
+            {
+                j=i+1;
+                mobile[i]=str[i];
+                _inner=_inner+j+"号：<input type='text' id='"+j+"'><br>";
+            }
+            document.all.show.innerHTML=_inner;
+            num = mobile.length-1;
+        }
+
+        function getRandNum(){
+            document.getElementById("result").value = mobile[GetRnd(0,num)];
+        }
+
+        function start(){
+            clearInterval(timer);
+            timer = setInterval('change()',50);
+        }
+
+        function ok(){
+            clearInterval(timer);
+        }
+
+        function GetRnd(min,max){
+            randnum = parseInt(Math.random()*(max-min+1));
+            return randnum;
+        }
+
+        function clearTimer(){
+            noDupNum();
+            clearInterval(timer);
+        }
+
+        function noDupNum()
+        {
+            mobile.removeEleAt(randnum);
+            var o = 0;
+            for(p=0; p<mobile.length;p++)
+            {
+                if(typeof mobile[p]!="undefined")
+                {
+                    mobile[o] = mobile[p];
+                    o++;
+                }
+            }
+            num = mobile.length-1;
+        }
+
+        Array.prototype.removeEleAt = function(dx)
+        {
+            if(isNaN(dx)||dx>this.length){return false;}
+            this.splice(dx,1);
+        }
+
+        function setValues()
+        {
+            document.getElementById(cellnum).value = document.getElementById("result").value ;
+            cellnum++;
+        }
+
+        function setTimer()
+        {
+            if(mobile.length==0)
+            {
+                clearInterval(timer);
+                clearTimeout(times);
+                cellnum=1;
+                document.all.start.disabled=false;
+                alert("抽签结束!");
+            }
+            else
+            {
+                timer = setInterval("getRandNum();",10);
+                times = setTimeout("clearTimer();setValues();setTimer();",1000);
+            }
+        }
+    </script>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td>
+        <div id="main">
+            <input id="result" type="text" size="30" readonly/><br>
+            <div id="show"></div>
+            <textarea  id="up" style="height:100px;width:300px;">张三,李四,王小虎</textarea><br>
+            <center><input id="start" type="button" value="开始抽签" onClick="this.disabled='disabled';spli();setTimer();"></center>
+        </div>
+    </td></tr>
+</table>
+</body>
+</html>

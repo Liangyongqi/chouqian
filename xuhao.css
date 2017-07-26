@@ -1,0 +1,102 @@
+body{
+    background-image:url(back5.jpg);
+}
+table{
+    position:absolute;
+    top:5%;
+    left:0;
+    width:100%;
+    font-size:12px;
+    empty-cells:show;
+    border-collapse:collapse;
+    border-collapse:collapse;
+    margin:0 auto;
+    border:1px solid #cad9ea;
+    color:#666;
+    table-layout:fixed;
+    word-break:keep-all;
+    word-wrap:normal;
+}
+th{
+    background-color:darkgrey;
+    background-repeat:repeat-x;
+    height:30px;
+    overflow:hidden;
+}
+td{height:20px;}
+td,th{
+    border:1px solid #cad9ea;
+    padding:0 1em 0;
+}
+tr:nth-child(even){background-color:#f5fafe;}
+
+
+input{
+    text-align:center;
+    border:3px solid #dfdfdf;
+    padding:10px 40px;
+    width:250px;
+    border-radius:25px;
+    box-shadow: 2px -2px 3px #35383b;
+    font-size:22px;
+}
+.div1{
+    position:absolute;
+    top:110px;
+    left:56%;
+
+}
+.div2{
+    position:absolute;
+    left:52%;
+    top:200px;
+}
+.div3{
+    position:absolute;
+    left:50%;
+    top:30px;
+}
+.div4{
+    position:absolute;
+    top:280px;
+    left:56%;
+
+}
+.send {
+    position:relative;
+    width:150px;
+    height:35px;
+    background:#dfdfdf;
+    border-radius:5px; /* 圆角 */
+    margin:220px 20% 0 80%;
+    font-size:13px;
+}
+
+.send .arrow {
+    position:absolute;
+    top:5px;
+    right:150px; /* 圆角的位置需要细心调试哦 */
+    width:0;
+    height:0;
+    font-size:0;
+    border:solid 8px;
+    border-color:#ecc9cf #dfdfdf #ecc9cf #ecc9cf;
+}
+.div5 {
+    overflow:auto;
+    width:28%;
+    height:700px;
+    align:center;
+    position:absolute;
+    top:5%;
+    left:5%;
+    background-color: #f4f4f4;
+    border: solid 2px black;
+    scrollbar-face-color: #889B9F;
+    scrollbar-shadow-color: #3D5054;
+    scrollbar-highlight-color: #C3D6DA;
+    scrollbar-3dlight-color: #3D5054;
+    scrollbar-darkshadow-color: #85989C;
+    scrollbar-track-color: #95A6AA;
+    scrollbar-arrow-color: #FFD6DA;
+}

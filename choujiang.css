@@ -1,0 +1,52 @@
+input{
+    text-align:center;
+    border:3px solid #5F9EA0;
+    padding:10px 40px;
+    width:250px;
+    border-radius:25px;
+    box-shadow: 2px -2px 3px #35383b;
+    font-size:22px;
+}
+
+body {background-image:url(bac.jpg);}
+
+font-face{
+    font-family:first;
+}
+
+.div1{
+    position:absolute;
+    top:90%;
+    left:80%;
+
+}
+.div2{
+    position:absolute;
+    left:10%;
+}
+
+
+.sendf {
+    position:absolute;
+    width:250px;
+    height:370px;
+    background:#ecfb94;
+    border-radius:5px; /* 圆角 */
+
+    /*margin-left:78%;*/
+    top:27%;
+    left:80%;
+
+    font-size:13px;
+}
+
+.sendf .arrowf {
+    position:absolute;
+    top:370px;
+    right:200px; /* 圆角的位置需要细心调试哦 */
+    width:0;
+    height:0;
+    font-size:0;
+    border:solid 8px;
+    border-color:#ecfb94 #8a8b7b #8a8b7b #8a8b7b;
+}
